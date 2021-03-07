@@ -1,0 +1,24 @@
+<div class="container">
+    <form action="">
+        <div class="form-group">
+            <label for="nomeInput">Nome:</label>
+            <!-- <input type="text" placeholder="Digite um nome" class="form-control" id="nomeInput" (input)="alterarNome($event)" #nomeInput> -->
+            <input type="text" placeholder="Digite um nome" class="form-control" id="nomeInput" (input)="monitoraVazio(nomeInput)" #nomeInput>
+        </div>
+        <button (click)="adicionar(nomeInput)" type="button" class="btn btn-primary">Adicionar</button>
+        <!-- <button type="button" class="btn btn-danger" (click)="esconder()">Esconder</button> -->
+        <div class="alert alert-primary mt-3 p3" [hidden]="exibirCaixa">
+            {{nome}}
+        </div>
+
+    </form>
+    <div>
+        <label for="produtoInput" class="">Produto</label>
+        <input #produtoInput type="text" class="form-control" id="produtoInput" [(ngModel)]="produto">
+        <!-- twowayDatabind: input alterado quando produto é alterado - button abaixo é submetido - e vice versa  -->
+        <button type="button" class="btn btn-primary btn-block mt-2" (click)="alterarProduto(produtoInput)">
+        Alterar Produto</button> {{produto}}
+        <!-- produto: alterado quando input acima é alterado -->
+    </div>
+
+</div>
