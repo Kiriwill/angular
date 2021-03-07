@@ -1,5 +1,22 @@
 <div class="container">
+
+    <app-pessoa-cadastro (pessoaAdicionada)="onAdicionarPessoa($event)"></app-pessoa-cadastro>
     <div class="row">
+        <div class="col-4" *ngFor="let pessoa of pessoas">
+            <app-pessoa-cartao [pessoa]="pessoa"></app-pessoa-cartao>
+        </div>
+        <!-- <div *ngFor="let pessoa of pessoas" class="card col-4 p-0 m-2">
+            <div class="card-header">Pessoa</div>
+            <div class="card-body">
+                <p class="card-text"></p>
+                <p>Nome: {{pessoa.nome}}</p>
+                <p>Idade: {{pessoa.idade}}</p>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- Exemplo com ngFor: 
+      <div class="row">
         <table *ngIf="!esconder" class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -8,18 +25,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>José</td>
-                    <td>18</td>
-                </tr>
-                <tr>
-                    <td>Joao</td>
-                    <td>21</td>
+                <tr *ngFor="let pessoa of pessoas">
+                    <td>{{pessoa.nome}}</td>
+                    <td>{{pessoa.idade}}</td>
                 </tr>
             </tbody>
         </table>
-    </div>
-    <div class="row">
+    </div> -->
+    <!-- <div class="row">
         <button (click)="alterarExibicao()" class="btn btn-primary btn-block mt-3">{{textoBotao}}</button>
-    </div>
+    </div> -->
 </div>

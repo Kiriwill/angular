@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   textoBotao = 'Esconder';
   esconder = false;
+  pessoas = [];
 
   alterarExibicao(){
     this.textoBotao = this.esconder ? "Exibir" : "Esconder";
     this.esconder = !this.esconder;
+  }
+
+  onAdicionarPessoa(pessoa){
+    this.pessoas = [pessoa, ... this.pessoas]  
   }
 }
